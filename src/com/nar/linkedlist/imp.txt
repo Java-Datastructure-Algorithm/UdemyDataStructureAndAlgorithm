@@ -1,0 +1,5 @@
+- take care of Generic Parameter
+- To find last node, check if node.nextNode is null , if yes then its last node.
+- Adding node
+    Adding at the beginning O(1) time complexity: Normal Process
+    Adding at the end : O(N) time complexity
