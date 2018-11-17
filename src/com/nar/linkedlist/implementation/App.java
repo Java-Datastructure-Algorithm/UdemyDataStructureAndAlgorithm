@@ -1,4 +1,4 @@
-package com.nar.linkedlist;
+package com.nar.linkedlist.implementation;
 
 public class App {
 

@@ -1,6 +1,6 @@
-package com.nar.linkedlist;
+package com.nar.linkedlist.implementation;
 
-public class LinkedList<T extends Comparable<T>> implements List<T>{
+public class LinkedList<T extends Comparable<T>> implements List<T> {
 
     private Node<T> rootNode;
     private int sizeCounter;
@@ -93,6 +93,40 @@ public class LinkedList<T extends Comparable<T>> implements List<T>{
                 node = node.getNextNode();
             }
         }
+    }
+
+    @Override
+    public Node<T> getMiddleNode() {
+        //Requires two pointers
+        Node<T> slowPointer = this.rootNode;
+        Node<T> fastPointer = this.rootNode;
+
+        while(fastPointer.getNextNode()!=null && fastPointer.getNextNode().getNextNode()!=null){
+            slowPointer = slowPointer.getNextNode();
+            fastPointer = fastPointer.getNextNode().getNextNode();
+        }
+
+        return slowPointer;
+    }
+
+    @Override
+    public void reverse() {
+        //Require three pointers
+        Node<T> currentNode = this.rootNode;
+        Node<T> previousNode = null;
+        Node<T> nextNode = null;
+
+        while( currentNode != null ) {
+            //Changes for current iteration
+            nextNode = currentNode.getNextNode(); //Before breaking the link, need to store nextElement
+            currentNode.setNextNode(previousNode);
+
+            //Changes for next iteration
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+
+        this.rootNode = previousNode;
     }
 
     public Node<T> getRootNode() {
