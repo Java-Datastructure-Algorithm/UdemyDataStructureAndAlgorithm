@@ -1,4 +1,4 @@
-package com.nar.queue;
+package com.nar.queue.implementation;
 
 public class Node<T extends Comparable<T>> {
     private T data;

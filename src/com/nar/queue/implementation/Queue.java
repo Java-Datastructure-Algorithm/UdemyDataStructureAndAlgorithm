@@ -1,4 +1,4 @@
-package com.nar.queue;
+package com.nar.queue.implementation;
 
 public class Queue<T extends Comparable<T>> {
     // Have pointer to first and last element
