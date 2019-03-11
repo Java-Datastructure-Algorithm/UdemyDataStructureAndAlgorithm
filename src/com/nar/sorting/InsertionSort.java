@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class InsertionSort {
     //Like bubble sort, in bubble sort we compare adjecent items but
-    //In this we swap to the left untill it finds its sorted position
+    //In this we swap to the left untill it finds its sorted position, so left side of i will always be sorted
     public static void main(String[] args) {
         int[] arr = {8,4,-3,2,7};
         int[] sorted = sort(arr);
@@ -13,7 +13,7 @@ public class InsertionSort {
     }
 
     public static int[] sort(int[] arr){
-        for(int i = 1; i < arr.length-1; i++){
+        for(int i = 1; i < arr.length; i++){
             int j = i;
             while(j>0 && (arr[j-1] > arr[j])){
                 swap(arr, j-1, j);
