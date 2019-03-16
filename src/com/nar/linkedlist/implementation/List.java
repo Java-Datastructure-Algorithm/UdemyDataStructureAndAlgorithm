@@ -7,4 +7,5 @@ public interface List<T extends Comparable<T>> {
     public void traverseList();
     public Node<T> getMiddleNode();
     public void reverse();
+    public boolean isCyclic();
 }

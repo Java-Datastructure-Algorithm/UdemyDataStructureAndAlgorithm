@@ -109,6 +109,42 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         return slowPointer;
     }
 
+    public boolean isCyclic(){
+        Node<T> slowPointer = this.rootNode;
+        Node<T> fastPointer = this.rootNode;
+
+        while(fastPointer.getNextNode()!=null && fastPointer.getNextNode().getNextNode()!=null){
+            slowPointer = slowPointer.getNextNode();
+            fastPointer = fastPointer.getNextNode().getNextNode();
+
+            if(slowPointer == fastPointer){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public T genNthNodeFromLast(int n){
+        Node<T> currentNode = this.rootNode;
+        Node<T> nthLastNode = null;
+
+        int counter = 0;
+        while(currentNode != null){
+            counter++;
+            currentNode = currentNode.getNextNode();
+            if(counter > n){
+                nthLastNode = nthLastNode.getNextNode();
+            }else if(counter == n){
+                nthLastNode = this.rootNode;
+            }
+        }
+
+        if(nthLastNode != null){
+           return nthLastNode.getData();
+        }
+        return null;
+    }
+
     @Override
     public void reverse() {
         //Require three pointers
