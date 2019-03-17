@@ -10,10 +10,12 @@ public class LinkedListInterviewRunner {
             ll.insert(i);
         }
 
-        //---------Find Middle Element (using Linked List created by me)
+        //----------All Operations using Linked List created by me
+
+        System.out.println("---------Find Middle Element ");
         System.out.println("Middle element "+ll.getMiddleNode());
 
-        //----------Reverse ArrayList
+        System.out.println("----------Reverse ArrayList---------");
         ll.reverse();
         ll.traverseList();
 
@@ -24,5 +26,14 @@ public class LinkedListInterviewRunner {
         System.out.println("------------Nth Node from last-------------");
         Integer nthLastNode = ll.genNthNodeFromLast(4);
         System.out.println(nthLastNode);
+
+        System.out.println("------------Remove Duplicates-------------");
+        ll.insert(1);
+        ll.insert(2);
+        System.out.println("Old data");
+        ll.traverseList();
+        ll.removeDuplicates();
+        System.out.println("New data");
+        ll.traverseList();
     }
 }

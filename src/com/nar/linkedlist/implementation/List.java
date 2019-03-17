@@ -8,4 +8,5 @@ public interface List<T extends Comparable<T>> {
     public Node<T> getMiddleNode();
     public void reverse();
     public boolean isCyclic();
+    public void removeDuplicates();
 }

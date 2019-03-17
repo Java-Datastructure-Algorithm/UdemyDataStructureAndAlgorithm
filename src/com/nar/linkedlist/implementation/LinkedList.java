@@ -89,9 +89,14 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         } else {
             Node<T> node = rootNode;
             while (node != null) {
-                System.out.print( node.getData() + "->");
+                System.out.print( node.getData());
+
                 node = node.getNextNode();
+
+                if(node != null)//For showing arrow only
+                    System.out.print("->");
             }
+            System.out.println("");// to print next sout from next line, otherwise printing like this 1->2->New data
         }
     }
 
@@ -132,7 +137,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
         while(currentNode != null){
             counter++;
             currentNode = currentNode.getNextNode();
-            if(counter > n){
+            if(counter > n){// Start navigating only when counter reaches to given count
                 nthLastNode = nthLastNode.getNextNode();
             }else if(counter == n){
                 nthLastNode = this.rootNode;
@@ -143,6 +148,29 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
            return nthLastNode.getData();
         }
         return null;
+    }
+
+    @Override
+    public void removeDuplicates(){
+        //Using two loops
+        Node<T> outerCurrentNode = rootNode;
+
+        while(outerCurrentNode != null){
+            Node<T> innerCurrentNode = outerCurrentNode.getNextNode();
+            Node<T> innerPrevNode = outerCurrentNode;
+            while(innerCurrentNode != null){
+
+                if(outerCurrentNode.getData().equals(innerCurrentNode.getData())){
+                    innerPrevNode.setNextNode(innerCurrentNode.getNextNode());
+                    innerCurrentNode = innerCurrentNode.getNextNode();//innerPrevNode will reamain same, need not to change
+                } else{
+                    innerPrevNode = innerCurrentNode;
+                    innerCurrentNode = innerCurrentNode.getNextNode();
+                }
+            }
+
+            outerCurrentNode = outerCurrentNode.getNextNode();
+        }
     }
 
     @Override
