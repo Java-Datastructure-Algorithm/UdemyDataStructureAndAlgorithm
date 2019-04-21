@@ -48,6 +48,8 @@ public class FindMissingNumberInSeries {
     }
 
     public void printMissingNumber(int[] numbers, int count) {
+        //It creates an array of bits represented by boolean values.
+        //For eg create array with all false and set to tru on index position on iterated
         int missingCount = count - numbers.length;
         BitSet bitSet = new BitSet(count);
         for (int number : numbers) {

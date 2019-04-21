@@ -37,7 +37,7 @@ public class Main {
         System.out.println("longestcommonPrefix: "+lonestCommonPrefix);
 
         System.out.println("----------Longest Repeating Substring-----");
-        String longestRepeatingSubStr = stringOperations.getLongestRepeatedSubstring("hellloabcdehello");
+        String longestRepeatingSubStr = stringOperations.getLongestRepeatedSubstring("ssshellloabcdehellouu");
         System.out.println("longestRepeatingSubstr: "+longestRepeatingSubStr);
 
         System.out.println("-----------Check String contains only digit-------");

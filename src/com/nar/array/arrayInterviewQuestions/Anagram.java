@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Anagram {
 
+    //Eg Listen and Silent
     public boolean isAnagram(String str1 , String str2){
         char[] arr1 = str1.toCharArray();
         char[] arr2 = str2.toCharArray();

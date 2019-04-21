@@ -52,7 +52,7 @@ public class MergeSort {
         while(i <= middle){
             arr[k] = tempArray[i];
             k++;
-            i++;
+             i++;
         }
 
         while( j <= high){

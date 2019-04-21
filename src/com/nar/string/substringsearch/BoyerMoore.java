@@ -14,11 +14,11 @@ public class BoyerMoore {
         mismatchShiftTable = new HashMap<>();
     }
 
-    private void precomputeShifts() {
+    private void precomputeShifts() {//Creating badmatch table and each character will shitf
         int patternLength = pattern.length();
         for(int i=0; i< patternLength ; i++){
             char actualCharacter = this.pattern.charAt(i);
-            int maxShift = Math.max(1, patternLength - i -1);
+            int maxShift = Math.max(1, patternLength - i -1);// Formula
             mismatchShiftTable.put(pattern.charAt(i), maxShift);
         }
     }

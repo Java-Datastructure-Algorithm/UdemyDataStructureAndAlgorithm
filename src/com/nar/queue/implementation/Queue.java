@@ -15,6 +15,7 @@ public class Queue<T extends Comparable<T>> {
 
     public void enqueue(T data) {// format   a(lastNode) <- b <- c <- d(fistNode (remember with firstnode first out and water pipe)))
 
+        //Consider it as simple pipe where new element will be stored as lastelement
         Node<T> node = new Node<>(data);
 
         if(isEmpty()){
