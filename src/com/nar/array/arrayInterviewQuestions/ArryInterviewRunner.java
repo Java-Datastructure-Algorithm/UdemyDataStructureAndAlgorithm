@@ -3,6 +3,8 @@ package com.nar.array.arrayInterviewQuestions;
 import com.sun.deploy.util.ArrayUtil;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class ArryInterviewRunner {
     public static void main(String[] args) {
@@ -29,6 +31,12 @@ public class ArryInterviewRunner {
         System.out.println(fms.findMissingNumberUsingXor());
 
         fms.printMissingNumber(new int[]{1,2,3,4,7}, 7);
+
+        System.out.println("------Removing Duplicates------");
+        RemoveDuplicates rd = new RemoveDuplicates();
+        int[] arrWithDuplicates = {1,2,3,1,2,3,1,2,3,4};
+        int[] removedDuplicateArr = rd.removeDuplicates(arrWithDuplicates);
+        System.out.println(Arrays.toString(removedDuplicateArr));
     }
 
 }

@@ -50,17 +50,18 @@ public class FindMissingNumberInSeries {
     public void printMissingNumber(int[] numbers, int count) {
         //It creates an array of bits represented by boolean values.
         //For eg create array with all false and set to tru on index position on iterated
+        //BitSet, .set, .nextClearBit(lastMissingIndex)
         int missingCount = count - numbers.length;
         BitSet bitSet = new BitSet(count);
         for (int number : numbers) {
-            bitSet.set(number - 1);
+            bitSet.set(number - 1);// setting number -1
         }
         System.out.printf("Missing numbers in integer array %s, with total number %d is %n",
                 Arrays.toString(numbers), count);
         int lastMissingIndex = 0;
         for (int i = 0; i < missingCount; i++) {
             lastMissingIndex = bitSet.nextClearBit(lastMissingIndex);// Main line
-            System.out.println(++lastMissingIndex);
+            System.out.println(++lastMissingIndex);// ++ to get actual values
         }
     }
 

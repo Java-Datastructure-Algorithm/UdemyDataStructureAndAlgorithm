@@ -1,5 +1,10 @@
 package com.nar.lrucache;
 
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         LRUCache lrucache = new LRUCache();
@@ -17,5 +22,9 @@ public class Main {
         System.out.println(lrucache.getEntry(3));//Since this is retrived this will be put at top
         System.out.println(lrucache.getEntry(2));//removed
         System.out.println(lrucache.getEntry(1));//removed
+
+        //Can create list of int[] sinces int[] is an object
+        int[] arr = new int[]{1,2,3};
+        List<int[]> list = new ArrayList<>();
     }
 }

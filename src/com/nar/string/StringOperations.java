@@ -49,6 +49,20 @@ public class StringOperations {
         return (reverseStringRecursively(text.substring(1)) + text.charAt(0));
     }
 
+    public String reverseStringRecursivelyOnlyWithSubstring(String text){
+        boolean exceptionThrown = false;
+        try{
+            text.substring(1); // When only one character remaining then return this. So doing subStirng(1)
+        }catch (Exception ex){
+            exceptionThrown = true;
+        }
+        if(exceptionThrown){
+            return text;
+        }
+
+        return reverseString(text.substring(1)) + text.substring(0,1);
+    }
+
     //----------Suffixes
     public List<String> getSuffixes(String text){
         int textlength = text.length(); //O(1)
@@ -82,6 +96,7 @@ public class StringOperations {
         for(int i=0; i<commonlenght; i++){
             if(str1.charAt(i) != str2.charAt(i)){
                 return str1.substring(0, i); // here not i+1 its i only since we need to print till previous iteration
+                //taking advantage that substring print till endIndex-1
             }
         }
 
@@ -103,6 +118,25 @@ public class StringOperations {
             }
         }
 
+        return longestSubstring;
+    }
+
+    public String getLongestReversedRepeatedSubstring(String text){
+        List<String> suffixes1 = getSuffixes(text);
+        List<String> suffixes2 = getSuffixes(new StringBuilder(text).reverse().toString());
+
+        String longestSubstring = "";
+
+        // Here we need to compare two separate set each values otherwise comparing in same set will give result
+        // for longest common repeating string, not reverse string
+        for(String str1 : suffixes1){
+            for(String str2 : suffixes2){
+                String tempString = getLongestCommonPrefix(str1, str2);
+                if(tempString.length() > longestSubstring.length()){
+                    longestSubstring = tempString;
+                }
+            }
+        }
         return longestSubstring;
     }
 
@@ -137,5 +171,7 @@ public class StringOperations {
 
         return false;
     }
+
+
 
 }

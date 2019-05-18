@@ -14,7 +14,7 @@ public class LRUCache {
     in case of LRU we use Doubly Linkedlist . Reason for choosing doubly LinkList is O(1) deletion ,
     updation and insertion if we have the address of Node on which this operation has to perform.*/
     Map<Integer, Entry> hashmap;
-    Entry start, end;
+    Entry start, end; // index of linked list
 
     int LRU_SIZE = 4; // Here i am setting 4 to test the LRU cache
     // implementation, it can make be dynamic
@@ -36,14 +36,14 @@ public class LRUCache {
             newEntry.right = null;
             if (hashmap.size() >= LRU_SIZE) {// We have reached maxium size so need to make room for new element. Remove from both hashmap and Linked list
                 hashmap.remove(end.key);
-                removeEntry(end);
+                removeEntry(end); // Need to remove from both hashmap and linked list
                 addAtTop(newEntry);
 
             } else {
                 addAtTop(newEntry);
             }
 
-            hashmap.put(key, newEntry);
+            hashmap.put(key, newEntry); // Need to add both in hashmap and linked list
 
         }
     }
@@ -59,7 +59,7 @@ public class LRUCache {
     }
 
     public void addAtTop(Entry entry){// take care of given node and its around node left right entries and update start and end position
-        entry.right = start;
+        entry.right = start; // start is required because when we need to add new entry at top it has to refer next to start
         entry.left = null;
 
         if(start != null){

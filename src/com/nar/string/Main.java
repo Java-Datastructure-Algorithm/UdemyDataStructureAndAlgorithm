@@ -19,6 +19,8 @@ public class Main {
         System.out.println("-------Reverse String O(N) complexity---------");
         System.out.println("Using StringBuilder Append: "+stringOperations.reverseString("narendra"));
         System.out.println("Using recursive function: "+stringOperations.reverseStringRecursively("narendra"));
+        System.out.println("Using recursive function with only substr fun: "+
+                stringOperations.reverseStringRecursivelyOnlyWithSubstring("narendra"));
         //There is no inplace reverse method since there is no setCharAt method
 
 
@@ -39,6 +41,12 @@ public class Main {
         System.out.println("----------Longest Repeating Substring-----");
         String longestRepeatingSubStr = stringOperations.getLongestRepeatedSubstring("ssshellloabcdehellouu");
         System.out.println("longestRepeatingSubstr: "+longestRepeatingSubStr);
+
+        System.out.println("----------Longest Repeating Reversed Substring-----");
+        String longestRepeatingReverseSubStr = stringOperations.getLongestReversedRepeatedSubstring("ABCDEFGHHCBASSGHABCD");
+        //In this parameter ABCD is longest common repeated substring
+        //and ABC is longest common reversed repeated substring
+        System.out.println("longestRepeatingReversedSubstr: "+longestRepeatingReverseSubStr);
 
         System.out.println("-----------Check String contains only digit-------");
         System.out.println("1234 isStrinContainsOnlyDigit: "+stringOperations.isContainOnlyDigits("1234"));

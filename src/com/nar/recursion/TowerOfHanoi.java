@@ -6,6 +6,7 @@ public class TowerOfHanoi {
         towerOfHanoi(n, 'A', 'B', 'C');
 
         //https://www.youtube.com/watch?v=q6RicK1FCUs
+        // A : Source, C : Destination, B : aux
         //Logic : Consider there is only 2 disc
         // Move 1 (n-1) disc from A to B using C
         // Move disc move disc 2 from A to C (directly to destination)
