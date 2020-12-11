@@ -10,7 +10,7 @@ public class FibonacciSeries {
         fibonacciIterative(8);//In iterative we can print series but in recursive we can print nth vlaue only
 
         FibonacciSeries fibo = new FibonacciSeries();
-        int nthFibonacci = fibo.fibonacciRecursive(8);
+        int nthFibonacci = fibo.fibonacciRecursive(4);
         System.out.println("nth fibonacci: "+nthFibonacci);
 
     }
@@ -30,8 +30,14 @@ public class FibonacciSeries {
     }
 
     public int fibonacciRecursive(int numb){
-        if(numb <= 1){ // This will consider first element of fibonacci as 1 not 0
+        /*if(numb <= 1){ // This will consider first element of fibonacci as 1 not 0
             return numb; //Except for first value all other follows sum of previous two
+        }*/
+
+        if (numb == 1) {
+            return 0;
+        } else if (numb == 2) {
+            return 1;
         }
 
         return fibonacciRecursive(numb -1) + fibonacciRecursive(numb -2);
