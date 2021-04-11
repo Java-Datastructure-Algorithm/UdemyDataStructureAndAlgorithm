@@ -11,6 +11,9 @@ public class Main {
         System.out.println("-----------Anargam Check------------");
         System.out.println("is Anargam :"+stringOperations.isAnagram("SILENT", "LISTEN"));
 
+        System.out.println("-----------Palindrome Check------------");
+        System.out.println("is palindrome :"+stringOperations.isPalindrome("ABCDCBA"));
+
         System.out.println("---------Substring Example----------");
         // .substring prints till index  : endindex -1
         System.out.println("012345678".substring(0,8));//Will print till 8-1=7th index

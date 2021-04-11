@@ -15,7 +15,7 @@ public class MergeSort {
         mergesort(0, arr.length - 1);
     }
 
-    public void mergesort(int low, int high){
+    public void mergesort(int low, int high){//**Not passing array as parameter, just passing index
         if(low >= high){
             return;
         }
@@ -26,7 +26,8 @@ public class MergeSort {
         merge(low, middle, high);
     }
 
-    private void merge(int low, int middle, int high){
+    private void merge(int low, int middle, int high){//merge two sorted array
+        //take all value in temp table
         for(int i = low; i <= high; i++){
             tempArray[i] = arr[i];
         }
