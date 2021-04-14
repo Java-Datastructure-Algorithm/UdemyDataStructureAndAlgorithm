@@ -34,10 +34,8 @@ public class FibonacciSeries {
             return numb; //Except for first value all other follows sum of previous two
         }*/
 
-        if (numb == 1) {
-            return 0;
-        } else if (numb == 2) {
-            return 1;
+        if (numb == 1 || numb == 2) {
+            return numb - 1;
         }
 
         return fibonacciRecursive(numb -1) + fibonacciRecursive(numb -2);
