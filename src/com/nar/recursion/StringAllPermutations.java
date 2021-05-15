@@ -15,7 +15,7 @@ public class StringAllPermutations {
         for(int i=l; i<=r; i++){
             str = swap(str, l, i);
             permute(str, l+1, r);
-            str = swap(str, l, i);
+            str = swap(str, l, i);//Backtracking to make it as it was prevously, since we are modifying same string again
         }
     }
 

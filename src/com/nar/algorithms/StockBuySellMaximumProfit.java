@@ -1,25 +1,22 @@
 package com.nar.algorithms;
 
+import java.util.Arrays;
+
 public class StockBuySellMaximumProfit {
     //https://www.geeksforgeeks.org/stock-buy-sell/
+
+    //{100, 180, 260, 310, 40, 535, 695}
+    //{0,    1,   2,   3,   4,  5,   6}
+    //{40:4, 100:0, 180:1, 260:2, 310:3, 535:5, 695:6}
+    //4-6, 0-3,
     public static void main(String[] args) {
-        StockBuySellMaximumProfit stockBuySell = new StockBuySellMaximumProfit();
-        int[] price = new int[]{100, 180, 260, 310,
-                40, 535, 695};
-        System.out.println(maximumProfit(price));
+        System.out.println(maximumProfit(new int[] {100, 180, 260, 310, 40, 535, 695}));
     }
 
     public static int maximumProfit(int[] arr) {
-        int maxVal = 0;
-        for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if ((arr[j] - arr[i]) > maxVal) {
-                    maxVal = arr[j] - arr[i];
-                }
-            }
-        }
+        int[] copy = Arrays.copyOf(arr, arr.length);
 
-        return maxVal;
+        return 10;
     }
 
 
