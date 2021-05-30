@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class HappyNumber {
     public static void main(String[] args) {
+        //The happy number can be defined as a number which will yield 1 when it is replaced by the sum of the square of its digits repeatedly.
+        // If this process results in an endless cycle of numbers containing 4, then the number is called an unhappy number.
 
         System.out.println("7 is happy number: "+isHappyNumber(7));
         System.out.println("19 is happy number: "+isHappyNumber(19));

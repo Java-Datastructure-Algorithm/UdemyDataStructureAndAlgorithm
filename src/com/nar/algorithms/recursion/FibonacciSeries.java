@@ -1,4 +1,4 @@
-package com.nar.recursion;
+package com.nar.algorithms.recursion;
 
 import java.util.Arrays;
 
@@ -10,11 +10,14 @@ public class FibonacciSeries {
         fibonacciIterative(8);//In iterative we can print series but in recursive we can print nth vlaue only
 
         FibonacciSeries fibo = new FibonacciSeries();
-        int nthFibonacci = fibo.fibonacciRecursive(4);
-        System.out.println("nth fibonacci: "+nthFibonacci);
+        int fourthFibonacci = fibo.fibonacciRecursive(4);
+        System.out.println("nth fibonacci: "+ fourthFibonacci);
+
+        System.out.println("Dynamic 2nd " + fibonacciDynamic(1));
 
     }
 
+    //Iterative
     public static void fibonacciIterative(int numb){
         int a = -1, b = 1, c=0;
         int[] arr = new int[numb];
@@ -29,8 +32,9 @@ public class FibonacciSeries {
         System.out.println(Arrays.toString(arr));
     }
 
+    //Recursive
     public int fibonacciRecursive(int numb){
-        /*if(numb <= 1){ // This will consider first element of fibonacci as 1 not 0
+        /*if(numb <= 1){ // This will consider first element of fibonacci as 1 not 0, also for this consider 0th fib is 0 1st
             return numb; //Except for first value all other follows sum of previous two
         }*/
 
@@ -39,6 +43,18 @@ public class FibonacciSeries {
         }
 
         return fibonacciRecursive(numb -1) + fibonacciRecursive(numb -2);
+    }
+
+    //Dynamic
+    public static int fibonacciDynamic(int num) {
+        int[] fibArr = new int[num +1];//To handle extra for 0
+        fibArr[0] = 0;
+        fibArr[1] = 1;
+
+        for (int i = 2; i <= num; i++) { // ***here <= not < since we are considering 0th =0 and 1st =1
+            fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
+        }
+        return fibArr[num];
     }
 
 }

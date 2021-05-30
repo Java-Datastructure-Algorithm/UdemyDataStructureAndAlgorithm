@@ -1,4 +1,4 @@
-package com.nar.recursion;
+package com.nar.algorithms.backtracking;
 
 public class StringAllPermutations {
     public static void main(String[] args) {

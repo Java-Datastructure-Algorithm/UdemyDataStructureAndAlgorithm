@@ -1,0 +1,17 @@
+- Minimum no of coins
+- Knight min move
+- https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
+
+- longest-common-subsequence-dp https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+- longest-increasing-subsequence-dp-3 https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
+
+
+-------Questions
+- String all permutations
+- stock buy sell max profit
+- minimum no of coins for given value
+- minimum move knight
+- minimum coins flip to make it alternative
+- HappyNumber
+- Valid Parentheses
+- find and return the maximum sum of  k x k matrix with maximum sum in a n x n matrix, https://www.geeksforgeeks.org/print-maximum-sum-square-sub-matrix-of-given-size/
