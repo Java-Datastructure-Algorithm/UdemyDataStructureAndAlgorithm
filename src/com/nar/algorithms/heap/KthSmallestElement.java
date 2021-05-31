@@ -1,4 +1,4 @@
-package com.nar.algorithms;
+package com.nar.algorithms.heap;
 
 import java.util.Arrays;
 import java.util.Comparator;

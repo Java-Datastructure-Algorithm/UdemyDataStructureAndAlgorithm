@@ -48,10 +48,10 @@ public class NoOfIslandWithoutDiagonal {
         if (row < 0 || col < 0 || row >= H || col >= L || islandGrid[row][col] != '1')
             return;
         islandGrid[row][col] = '0'; //marking it visited
-        DFS(islandGrid, row+ 1, col); // go right
-        DFS(islandGrid, row- 1, col); //go left
-        DFS(islandGrid, row, col + 1); //go down
-        DFS(islandGrid, row, col - 1); // go up
+        DFS(islandGrid, row+ 1, col); // go bottom
+        DFS(islandGrid, row- 1, col); //go top
+        DFS(islandGrid, row, col + 1); //go right
+        DFS(islandGrid, row, col - 1); // go left
     }
 
 }

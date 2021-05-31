@@ -1,6 +1,7 @@
 package com.nar.algorithms.dynamicprogramming;
 
 public class LongestIncreasingSubsequence {
+    //https://www.youtube.com/watch?v=mouCn3CFpgg&t=1013s
     public static void main(String args[]) {
         int arr[] = {10, 22, 9, 33, 21, 50, 41, 60};
         int n = arr.length;
@@ -20,12 +21,12 @@ public class LongestIncreasingSubsequence {
         /* Compute optimized LIS values in bottom up manner */
         for (i = 1; i < n; i++)
             for (j = 0; j < i; j++)
-                if (arr[i] > arr[j] && lis[i] <= lis[j] + 1)
+                if (arr[j] < arr[i] && lis[i] <= lis[j] + 1) //second condition is to increase the valuse
                     lis[i] = lis[j] + 1;
 
         /* Pick maximum of all LIS values */
         for (i = 0; i < n; i++)
-            if (max < lis[i])
+            if (lis[i] > max )
                 max = lis[i];
 
         return max;
