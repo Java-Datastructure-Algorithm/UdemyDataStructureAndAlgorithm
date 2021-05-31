@@ -1,4 +1,4 @@
-package com.nar.algorithms;
+package com.nar.algorithms.others;
 
 import java.util.HashSet;
 import java.util.Set;

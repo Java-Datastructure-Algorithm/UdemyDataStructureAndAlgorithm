@@ -1,6 +1,6 @@
-package com.nar.algorithms;
+package com.nar.algorithms.others;
 
-public class FormattedString {
+public class AdjacentEvenAstricOddDashFormattedString {
     //If consecutive even then append * , if odd then append -
     public static void main(String[] args) {
         System.out.println(formattedStr("21462675756"));

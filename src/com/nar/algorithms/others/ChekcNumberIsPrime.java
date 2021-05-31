@@ -1,6 +1,6 @@
-package com.nar.algorithms;
+package com.nar.algorithms.others;
 
-public class PrimeNumber {
+public class ChekcNumberIsPrime {
     public static void main(String[] args) {
         System.out.println(isPrime(4));
         System.out.println(isPrime(23));

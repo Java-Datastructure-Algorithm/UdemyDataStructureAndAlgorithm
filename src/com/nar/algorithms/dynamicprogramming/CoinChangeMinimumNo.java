@@ -46,19 +46,4 @@ public class CoinChangeMinimumNo {
 
         return table[amount];
     }
-
-    public static int minCoinChangeMySolution(int[] coins, int amount) {
-        int[] mem = new int[amount +1];
-        mem[0] = 0;
-        for (int i=1; i<=amount; i++) {
-            for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) {
-                    int remaining = i-coins[j];
-                    mem[i] = 1 + mem[remaining];
-                    break;
-                }
-            }
-        }
-        return mem[mem.length-1];
-    }
 }

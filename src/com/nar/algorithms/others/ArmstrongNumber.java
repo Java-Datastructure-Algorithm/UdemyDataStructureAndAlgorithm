@@ -1,4 +1,4 @@
-package com.nar.algorithms;
+package com.nar.algorithms.others;
 
 public class ArmstrongNumber {
     public static void main(String[] args) {
