@@ -17,19 +17,19 @@ public class KthSmallestElement {
 
     // Function to find the k'th smallest element in an
     // array using max-heap
-    public static int findKthSmallest(List<Integer> A, int k) {
+    public static int findKthSmallest(List<Integer> list, int k) {
         // create a max-heap using the `PriorityQueue` class and
         // insert the first `k` array elements into the heap
         PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
-        pq.addAll(A.subList(0, k));
+        pq.addAll(list.subList(0, k));
 
         // do for remaining array elements
-        for (int i = k; i < A.size(); i++) {
+        for (int i = k; i < list.size(); i++) {
             // if the current element is less than the root of the heap
-            if (A.get(i) < pq.peek()) {
+            if (list.get(i) < pq.peek()) {
                 // replace root with the current element
                 pq.poll();
-                pq.add(A.get(i));
+                pq.add(list.get(i));
             }
         }
 

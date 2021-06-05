@@ -1,5 +1,8 @@
 package com.nar.algorithms.dynamicprogramming;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HouseRobber {
 
     public static void main(String[] args) {
@@ -7,6 +10,8 @@ public class HouseRobber {
         System.out.println("Max rob amount :"+rob(houses));
         houses = new int[]{2,7,9,3,1};
         System.out.println("Max rob amount :"+rob(houses));
+        List<String> list = new ArrayList<>();
+        list.forEach(System.out::println);
     }
 
     public static int rob(int[] nums) {

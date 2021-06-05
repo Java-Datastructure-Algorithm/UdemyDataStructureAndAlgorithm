@@ -21,7 +21,7 @@ public class LongestIncreasingSubsequence {
         /* Compute optimized LIS values in bottom up manner */
         for (i = 1; i < n; i++)
             for (j = 0; j < i; j++)
-                if (arr[j] < arr[i] && lis[i] <= lis[j] + 1) //second condition is to increase the valuse
+                if (arr[j] < arr[i] && lis[i] <= lis[j] + 1) // check for +1 will be there or not second condition is to increase the valuse
                     lis[i] = lis[j] + 1;
 
         /* Pick maximum of all LIS values */
